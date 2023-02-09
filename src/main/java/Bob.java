@@ -13,6 +13,9 @@ public class Bob {
                 if(input.charAt(input.length()-1) == '!'){
                     response = prefix+"\"Whoa, chill bro\"";
             }else
+            if(input.equals("")){
+                response = prefix+"\"Fine, be that way\"";
+            }else
                 if(input.equalsIgnoreCase("leave") ){
                     response = prefix+"\"k. See ya, bro.";
                     leave = true;
