@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class HighLow {
@@ -7,7 +8,8 @@ public class HighLow {
 
     public static void main(String[] args) {
         int guessesRemaining = 20;
-        int guessesUsed = 0;
+        Random rand = new Random();
+        int targetNum = rand.nextInt(1,100);
 
         while(!quit) {
             System.out.printf("""
@@ -16,12 +18,31 @@ public class HighLow {
                                 
                     Please make a guess.
                     Your guess should be between 1 and 100.
+                    Enter -1 to exit
                                 
-                    Your guess: 
+                    Your guess:\s
                     """,guessesRemaining);
+
             int input = getInteger(1,100);
-            System.out.println("Input was "+input);
-            quit = true;
+
+            if (guessesRemaining < 1){
+                quit = true;
+                System.out.println("Unfortunately, you have run out of guesses. Game Over.");
+            } else
+            if(input == targetNum){
+                System.out.println("Congrats! You win!");
+                quit = true;
+            } else
+            if (input < targetNum){
+                System.out.println("Higher!");
+            } else
+            if(input > targetNum){
+                System.out.println("Lower!");
+            }
+            if(input == -1){
+                quit = true;
+            }
+            guessesRemaining--;
         }
     }
     public static int getInteger(int min, int max){
