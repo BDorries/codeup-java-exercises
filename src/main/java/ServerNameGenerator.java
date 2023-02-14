@@ -1,12 +1,13 @@
 import java.io.*;
-import java.util.Arrays;
 import java.util.Random;
 
 public class ServerNameGenerator {
     public static void main(String[] args) throws FileNotFoundException {
 
-        File adjectivesFile = new File("/Users/billiedorries/IdeaProjects/codeup-java-exercises/src/main/java/adjectives.txt");
-        File nounsFile = new File("/Users/billiedorries/IdeaProjects/codeup-java-exercises/src/main/java/nouns.txt");
+        String path = System.getProperty("user.dir");
+        System.out.println("Current directory: "+path);
+        File adjectivesFile = new File(path+"/src/main/resources/adjectives.txt");
+        File nounsFile = new File(path+"/src/main/resources/nouns.txt");
         FileInputStream adjIn = new FileInputStream(adjectivesFile);
         FileInputStream nounIn = new FileInputStream(nounsFile);
 
@@ -33,6 +34,6 @@ public class ServerNameGenerator {
         int selectionOne = rand.nextInt(100);
         int selectionTwo = rand.nextInt(100);
 
-        System.out.println("Server name: " +adjectives[selectionOne]+" "+nouns[selectionTwo]);
+        System.out.println("Server name: " +adjectives[selectionOne]+"-"+nouns[selectionTwo]);
     }
 }
