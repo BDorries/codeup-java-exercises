@@ -9,8 +9,8 @@ public class Person {
         return name;
     }
 
-    public void setName(String str){
-        name = str;
+    public void setName(String name){
+        this.name = name;
     }
     public void sayHello(){
         System.out.println("Hello, " +name);
