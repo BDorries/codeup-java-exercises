@@ -14,7 +14,14 @@ public class Input {
         return input;
     }
 
-    public boolean yesNo(String input){
+    public boolean yesNo(){
+        String input = scanner.nextLine();
+        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
+    }
+
+    public boolean yesNo(String prompt){
+        System.out.println(prompt);
+        String input = scanner.nextLine();
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
     }
 
@@ -33,7 +40,7 @@ public class Input {
         return input;
     }
     public int getInt(String prompt){
-        System.out.println(prompt);
+        System.out.print(prompt);
         return getInt();
     }
     public int getInt(int min, int max){

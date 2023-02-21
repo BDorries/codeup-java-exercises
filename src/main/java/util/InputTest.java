@@ -6,12 +6,6 @@ public class InputTest {
         String prompt = "This is the prompt";
 
         Input in = new Input();
-        System.out.println(in.yesNo("y"));
-        System.out.println(in.yesNo("Y"));
-        System.out.println(in.yesNo("Yes"));
-        System.out.println(in.yesNo("YES"));
-        System.out.println(in.yesNo("yes"));
-        System.out.println(in.yesNo("foo"));
 
         in.getInt();
         in.getInt(prompt);
