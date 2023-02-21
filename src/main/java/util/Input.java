@@ -55,7 +55,7 @@ public class Input {
                 scanner.nextLine();
             }
         }
-        while(!isInRange(input,min,max)){
+        if(!inRange(input,min,max)){
             System.out.print("Not in range. Please reenter: ");
             input = getInt(min,max);
         }
@@ -65,11 +65,10 @@ public class Input {
         System.out.println(prompt);
         return getInt(min, max);
     }
-    public boolean isInRange(int num,int min,int max){
+    public boolean inRange(int num, int min, int max){
         return num <= max && num >= min;
     }
-
-    public boolean isInRange(double num,double min,double max){
+    public boolean inRange(double num, double min, double max){
         return num <= max && num >= min;
     }
     public double getDouble(){
@@ -102,7 +101,7 @@ public class Input {
                 scanner.nextLine();
             }
         }
-        while(!isInRange(input,min,max)){
+        while(!inRange(input,min,max)){
             System.out.print("Not in range. Please reenter: ");
             input = getDouble(min,max);
         }
