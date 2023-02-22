@@ -39,10 +39,6 @@ public class Input {
         }
         return input;
     }
-    public int getInt(String prompt){
-        System.out.print(prompt);
-        return getInt();
-    }
     public int getInt(int min, int max){
         int input = 0;
 
@@ -60,6 +56,10 @@ public class Input {
             input = getInt(min,max);
         }
         return input;
+    }
+    public int getInt(String prompt){
+        System.out.print(prompt);
+        return getInt();
     }
     public int getInt(int min, int max, String prompt){
         System.out.println(prompt);
