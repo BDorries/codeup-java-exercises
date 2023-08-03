@@ -14,16 +14,16 @@ public class MethodsExercises {
         System.out.println(num1+" / "+num2+" = "+divideNums(num1,num2));
 
         //Exercise 2
-//        System.out.println("A number between 1 and 10 is: "+ getInteger(1,10));
+        System.out.println("Your number between 1 and 10 is: "+ getInteger(1,10));
 
         //Exercise 3
-//        int factorial = getInteger(1,10);
-//        System.out.println("The factorial of "+factorial+" is "+ getFactorial(factorial));
+        int factorial = getInteger(1,10);
+        System.out.println("The factorial of "+factorial+" is "+ getFactorial(factorial));
 
         //Exercise 4
         System.out.println("Enter a number of sides for a dice.");
         int faces = (getInteger(1,30));
-        System.out.println("The result is: "+rollDice(faces)+rollDice(faces));
+        System.out.println("The results are: "+rollDice(faces) +" and " +rollDice(faces));
     }
     public static int addNums(int num1, int num2){
         return num1+num2;
@@ -49,7 +49,7 @@ public class MethodsExercises {
     public static int getInteger(int min, int max){
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter an integer between "+min+" and "+max);
-        int input = 0;
+        int input;
 
         while(true){
             try{
@@ -72,11 +72,11 @@ public class MethodsExercises {
     }
     public static long getFactorial(int num){
         long result = 1;
-        if(num > 0) {
-            for (int i = 1; i <= num; i++) {
-                result *= i;
-            }
+
+        for (int i = 1; i <= num; i++) {
+            result *= i;
         }
+
         return result;
     }
     public static int rollDice(int faceNum){
